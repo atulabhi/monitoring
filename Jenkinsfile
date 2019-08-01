@@ -1,4 +1,5 @@
 def ORG = "mayadataio"
+def REPO = "monitoring"
 pipeline {
     agent any
     stages {
