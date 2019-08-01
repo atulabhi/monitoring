@@ -40,7 +40,7 @@ pipeline {
 
 		    echo "Checked out branch: ${env.BRANCH_NAME}"
 
-                    sh "docker build -t ${ORG}/${REPO}:${GIT_SHA}"
+                    sh "docker build -t ${ORG}/${REPO}:${GIT_SHA} ."
 	         }
         }
     }
