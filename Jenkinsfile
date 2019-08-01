@@ -1,4 +1,5 @@
 def ORG = "mayadataio"
+def REPO = "monitoring"
 pipeline {
     agent any
     stages {
@@ -39,7 +40,7 @@ pipeline {
 
 		    echo "Checked out branch: ${env.BRANCH_NAME}"
 
-                    sh "docker build -t ${ORG}/${REPO}:${GIT_SHA}"
+                    sh "docker build -t ${ORG}/${REPO}:${GIT_SHA} ."
 	         }
         }
     }
@@ -61,4 +62,5 @@ pipeline {
 	    }
     }
 
+}
 }
