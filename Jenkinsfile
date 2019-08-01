@@ -47,7 +47,7 @@ pipeline {
             steps {
 		    script {
 		        echo "Checked out build number: ${env.BUILD_NUMBER}"
-		        withCredentials([usernamePassword( credentialsId: 'docke_cred', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
+		        withCredentials([usernamePassword( credentialsId: 'f4e122bb-f119-42e0-9a2e-577b2cedfbd6', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
                             if ( env.BRANCH_NAME == 'master') {
                                 sh "docker login  -u${USERNAME} -p${PASSWORD}"
                                 sh "docker push  ${ORG}/${REPO}:${GIT_SHA}"
